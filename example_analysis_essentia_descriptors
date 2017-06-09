@@ -11,7 +11,7 @@ print(analysis.as_dict())
 
 mfcc = analysis.lowlevel.mfcc.mean
 print("Mfccs:", mfcc)
-# you can also get the original json (this apply to any FreesoundObject):
+# it can also be got the original json (this apply to any FreesoundObject):
 
 spectral_complexity_mean = analysis.lowlevel.spectral_complexity.mean
 print ("spectral Complex mean",spectral_complexity_mean)
