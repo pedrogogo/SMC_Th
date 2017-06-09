@@ -39,12 +39,12 @@ list_hard_analysis = dict_hard.keys()
 list_rough_analysis = dict_rough.keys()
 
 ####commented as just used to see commented prior any processing.####
-#print list_bright_analysis
-#print list_metal_analysis
-#print list_hard_analysis
-#print list_metal_analysis
-#print list_reverb_analysis
-#print list_rough_analysis
+#list_bright_analysis
+#list_metal_analysis
+#list_hard_analysis
+#list_metal_analysis
+#list_reverb_analysis
+#list_rough_analysis
 
 
 #applying intersection to all the lists
