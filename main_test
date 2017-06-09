@@ -25,7 +25,6 @@ for keys, values in dict_metal.iteritems():
 for keys, values in dict_hard.iteritems():
     print("HARD VALUES-FreesoundID: %s VALUE: %s" % (keys, values))
     
-    
 for keys, values in dict_reverb.iteritems():
     print("REVERB VALUES-FreesoundID:%s VALUE: %s" % (keys, values))
     
