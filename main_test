@@ -14,3 +14,51 @@ list_metal_analysis = dict_metal.keys()
 list_hard_analysis = dict_hard.keys()
 list_reverb_analysis = dict_reverb.keys()
 list_rough_analysis = dict_rough.keys()
+
+for keys, values in dict_bright.iteritems():
+    print("BRIGHT-FreesoundID: %s VALUE: %s" % (keys, values))
+    
+    
+for keys, values in dict_metal.iteritems():
+    print("METAL-FreesoundID: %s VALUE: %s" % (keys, values))
+
+for keys, values in dict_hard.iteritems():
+    print("HARD VALUES-FreesoundID: %s VALUE: %s" % (keys, values))
+    
+    
+for keys, values in dict_reverb.iteritems():
+    print("REVERB VALUES-FreesoundID:%s VALUE: %s" % (keys, values))
+    
+for keys, values in dict_rough.iteritems():
+    print("ROUGH VALUES-FreesoundID: %s VALUE: %s" % (keys, values))
+
+list_bright_analysis = dict_bright.keys()
+list_metal_analysis = dict_metal.keys()
+list_hard_analysis = dict_hard.keys()
+#list_reverb_analysis = dict_reverb.keys()  #leaving it apart for  now and many failed
+list_rough_analysis = dict_rough.keys()
+
+####commented as just used to see commented prior any processing.####
+#print list_bright_analysis
+#print list_metal_analysis
+#print list_hard_analysis
+#print list_metal_analysis
+#print list_reverb_analysis
+#print list_rough_analysis
+
+
+#applying intersection to all the lists
+all_ids_intersection=list(set(list_bright_analysis) & set(list_metal_analysis) & set(list_hard_analysis) & set(list_rough_analysis))
+all_ids_intersection
+
+
+#creating matrix X
+X = []
+
+for fs_id in all_ids_intersection:
+    feature_vector = [dict_bright[fs_id], dict_metal[fs_id], dict_hard[fs_id],dict_rough[fs_id]]
+    X.append(feature_vector)
+    
+X = np.array(X)    
+#feature_vectore = [dict_bright[fs_id], dict_metal[fs_id],  dict_hard[fs_id], dict_reverb[fs_id], dict_rough[fs_id] ]
+X
