@@ -234,7 +234,7 @@ print analysis.lowlevel.spectral_complexity.as_dict()
 
 E = {u'dmean':analysis.lowlevel.spectral_complexity.dmean, u'dmean2': analysis.lowlevel.spectral_complexity.dmean2, u'dvar':analysis.lowlevel.spectral_complexity.dvar,u'dvar2':analysis.lowlevel.spectral_complexity.dvar2,u'max':analysis.lowlevel.spectral_complexity.max,u'mean':analysis.lowlevel.spectral_complexity.mean,u'min':analysis.lowlevel.spectral_complexity.min,u'var':analysis.lowlevel.spectral_complexity.var}
 
-#Potting
+#Plotting
 plt.bar(range(len(E)), E.values(), align='center')
 plt.xticks(range(len(E)), list(E.keys()))
 plt.show()
