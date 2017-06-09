@@ -2,18 +2,12 @@
 import freesound
 client = freesound.FreesoundClient()
 client.set_token("API_KEY", 'token')
+
+
 sound = client.get_sound(1123)
 analysis = sound.get_analysis()
 analysis.lowlevel.spectral_centroid.as_dict()
-
-
-# In[8]:
-
 print(analysis.as_dict())
-
-
-
-
 
 mfcc = analysis.lowlevel.mfcc.mean
 print("Mfccs:", mfcc)
@@ -39,7 +33,6 @@ plt.show()
 
 #SPECTRAL COMPLEXITY EXAMPLES
 
-# In[78]:
 
 #WARM.spectral_complexity DICT
 
