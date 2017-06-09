@@ -1,0 +1,16 @@
+import json
+#this opens_loads the json files and assign them to their corresponding variables
+
+dict_bright = json.load(open("bright_analysis.json", 'rb'))
+dict_metal = json.load(open("metal_analysis.json",'rb'))
+dict_hard = json.load(open("hard_analysis.json",'rb'))
+dict_reverb = json.load(open("reverb_analysis.json",'rb'))
+dict_rough = json.load(open("rough_analysis.json",'rb'))
+
+#create list out of them
+
+list_bright_analysis = dict_bright.keys()
+list_metal_analysis = dict_metal.keys()
+list_hard_analysis = dict_hard.keys()
+list_reverb_analysis = dict_reverb.keys()
+list_rough_analysis = dict_rough.keys()
