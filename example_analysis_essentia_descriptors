@@ -1,0 +1,247 @@
+#ipython
+import freesound
+client = freesound.FreesoundClient()
+client.set_token("API_KEY", 'token')
+sound = client.get_sound(1123)
+analysis = sound.get_analysis()
+analysis.lowlevel.spectral_centroid.as_dict()
+
+
+# In[8]:
+
+print(analysis.as_dict())
+
+
+
+
+
+mfcc = analysis.lowlevel.mfcc.mean
+print("Mfccs:", mfcc)
+# you can also get the original json (this apply to any FreesoundObject):
+
+spectral_complexity_mean = analysis.lowlevel.spectral_complexity.mean
+print ("spectral Complex mean",spectral_complexity_mean)
+
+
+#EXAMPLE OF PLOTTING
+import matplotlib.pyplot as plt
+get_ipython().magic(u'matplotlib inline')
+
+
+#EXAMPLE
+D = {u'Label1':26, u'Label2': 17, u'Label3':30}
+
+plt.bar(range(len(D)), D.values(), align='center')
+plt.xticks(range(len(D)), list(D.keys()))
+
+plt.show()
+
+
+#SPECTRAL COMPLEXITY EXAMPLES
+
+# In[78]:
+
+#WARM.spectral_complexity DICT
+
+sound = client.get_sound(239125) 
+analysis = sound.get_analysis()
+analysis.lowlevel.spectral_complexity.as_dict()
+
+print analysis.lowlevel.spectral_complexity.as_dict()
+
+
+
+#PLOTTING
+
+D = {u'dmean':analysis.lowlevel.spectral_complexity.dmean, u'dmean2': analysis.lowlevel.spectral_complexity.dmean2, u'dvar':analysis.lowlevel.spectral_complexity.dvar,u'dvar2':analysis.lowlevel.spectral_complexity.dvar2,u'max':analysis.lowlevel.spectral_complexity.max,u'mean':analysis.lowlevel.spectral_complexity.mean,u'min':analysis.lowlevel.spectral_complexity.min,u'var':analysis.lowlevel.spectral_complexity.var}
+
+plt.bar(range(len(D)), D.values(), align='center')
+plt.xticks(range(len(D)), list(D.keys()))
+
+plt.show()
+
+
+#CLEAR.
+
+sound = client.get_sound(38005) 
+analysis = sound.get_analysis()
+
+print analysis.lowlevel.spectral_complexity.as_dict()
+
+
+#PLOTTING
+
+D = {u'dmean':analysis.lowlevel.spectral_complexity.dmean, u'dmean2': analysis.lowlevel.spectral_complexity.dmean2, u'dvar':analysis.lowlevel.spectral_complexity.dvar,u'dvar2':analysis.lowlevel.spectral_complexity.dvar2,u'max':analysis.lowlevel.spectral_complexity.max,u'mean':analysis.lowlevel.spectral_complexity.mean,u'min':analysis.lowlevel.spectral_complexity.min,u'var':analysis.lowlevel.spectral_complexity.var}
+
+plt.bar(range(len(D)), D.values(), align='center')
+plt.xticks(range(len(D)), list(D.keys()))
+
+plt.show()
+
+
+
+#HARD
+sound = client.get_sound(20313) 
+analysis = sound.get_analysis()
+print analysis.lowlevel.spectral_complexity.as_dict()
+
+#PLOTTING
+
+D = {u'dmean':analysis.lowlevel.spectral_complexity.dmean, u'dmean2': analysis.lowlevel.spectral_complexity.dmean2, u'dvar':analysis.lowlevel.spectral_complexity.dvar,u'dvar2':analysis.lowlevel.spectral_complexity.dvar2,u'max':analysis.lowlevel.spectral_complexity.max,u'mean':analysis.lowlevel.spectral_complexity.mean,u'min':analysis.lowlevel.spectral_complexity.min,u'var':analysis.lowlevel.spectral_complexity.var}
+
+plt.bar(range(len(D)), D.values(), align='center')
+plt.xticks(range(len(D)), list(D.keys()))
+
+plt.show()
+
+
+
+#METALLIC
+sound = client.get_sound(83445) 
+analysis = sound.get_analysis()
+print analysis.lowlevel.spectral_complexity.as_dict()
+
+#PLOTTING
+
+D = {u'dmean':analysis.lowlevel.spectral_complexity.dmean, u'dmean2': analysis.lowlevel.spectral_complexity.dmean2, u'dvar':analysis.lowlevel.spectral_complexity.dvar,u'dvar2':analysis.lowlevel.spectral_complexity.dvar2,u'max':analysis.lowlevel.spectral_complexity.max,u'mean':analysis.lowlevel.spectral_complexity.mean,u'min':analysis.lowlevel.spectral_complexity.min,u'var':analysis.lowlevel.spectral_complexity.var}
+
+plt.bar(range(len(D)), D.values(), align='center')
+plt.xticks(range(len(D)), list(D.keys()))
+
+plt.show()
+
+
+
+#BRIGHT lowlevel.spectral_complexity
+
+sound = client.get_sound(75138) 
+analysis = sound.get_analysis()
+print analysis.lowlevel.spectral_complexity.as_dict()
+
+#PLOTTING
+
+D = {u'dmean':analysis.lowlevel.spectral_complexity.dmean, u'dmean2': analysis.lowlevel.spectral_complexity.dmean2, u'dvar':analysis.lowlevel.spectral_complexity.dvar,u'dvar2':analysis.lowlevel.spectral_complexity.dvar2,u'max':analysis.lowlevel.spectral_complexity.max,u'mean':analysis.lowlevel.spectral_complexity.mean,u'min':analysis.lowlevel.spectral_complexity.min,u'var':analysis.lowlevel.spectral_complexity.var}
+
+plt.bar(range(len(D)), D.values(), align='center')
+plt.xticks(range(len(D)), list(D.keys()))
+
+plt.show()
+
+
+#SHARP
+
+sound = client.get_sound(89434) 
+analysis = sound.get_analysis()
+print analysis.lowlevel.spectral_complexity.as_dict()
+
+#PLOTTING
+
+D = {u'dmean':analysis.lowlevel.spectral_complexity.dmean, u'dmean2': analysis.lowlevel.spectral_complexity.dmean2, u'dvar':analysis.lowlevel.spectral_complexity.dvar,u'dvar2':analysis.lowlevel.spectral_complexity.dvar2,u'max':analysis.lowlevel.spectral_complexity.max,u'mean':analysis.lowlevel.spectral_complexity.mean,u'min':analysis.lowlevel.spectral_complexity.min,u'var':analysis.lowlevel.spectral_complexity.var}
+
+plt.bar(range(len(D)), D.values(), align='center')
+plt.xticks(range(len(D)), list(D.keys()))
+
+plt.show()
+
+
+#SHARP2
+
+sound = client.get_sound(189339) 
+analysis = sound.get_analysis()
+print analysis.lowlevel.spectral_complexity.as_dict()
+
+#PLOTTING
+
+D = {u'dmean':analysis.lowlevel.spectral_complexity.dmean, u'dmean2': analysis.lowlevel.spectral_complexity.dmean2, u'dvar':analysis.lowlevel.spectral_complexity.dvar,u'dvar2':analysis.lowlevel.spectral_complexity.dvar2,u'max':analysis.lowlevel.spectral_complexity.max,u'mean':analysis.lowlevel.spectral_complexity.mean,u'min':analysis.lowlevel.spectral_complexity.min,u'var':analysis.lowlevel.spectral_complexity.var}
+
+plt.bar(range(len(D)), D.values(), align='center')
+plt.xticks(range(len(D)), list(D.keys()))
+
+plt.show()
+
+
+#MFCC LIST
+
+sound = client.get_sound(28005)
+analysis = sound.get_analysis()
+analysis.lowlevel.mfcc.as_dict()
+
+
+#SPECTRAL CENTROID
+
+#SHARP2
+
+sound = client.get_sound(189339) 
+analysis = sound.get_analysis()
+print analysis.lowlevel.spectral_centroid.as_dict()
+
+
+#PLOTTING
+
+#D = {u'dmean':analysis.lowlevel.spectral_centroid.dmean, u'dmean2': analysis.lowlevel.spectral_centroid.dmean2, u'dvar':analysis.lowlevel.spectral_centroid.dvar,u'dvar2':analysis.lowlevel.spectral_centroid.dvar2,u'max':analysis.lowlevel.spectral_centroid.max,u'mean':analysis.lowlevel.spectral_centroid.mean,u'min':analysis.lowlevel.spectral_centroid.min,u'var':analysis.lowlevel.spectral_centroid.var}
+D = {u'dmean':analysis.lowlevel.spectral_centroid.dmean, u'dmean2': analysis.lowlevel.spectral_centroid.dmean2,u'max':analysis.lowlevel.spectral_centroid.max,u'mean':analysis.lowlevel.spectral_centroid.mean,u'min':analysis.lowlevel.spectral_centroid.min}
+
+
+plt.bar(range(len(D)), D.values(), align='center')
+plt.xticks(range(len(D)), list(D.keys()))
+
+plt.title ("CENTROID SHARP ID:180330")
+plt.show()
+
+
+#BRIGHT 
+
+sound = client.get_sound(75138) 
+analysis = sound.get_analysis()
+print analysis.lowlevel.spectral_centroid.as_dict()
+
+#PLOTTING
+
+#D = {u'dmean':analysis.lowlevel.spectral_centroid.dmean, u'dmean2': analysis.lowlevel.spectral_centroid.dmean2, u'dvar':analysis.lowlevel.spectral_centroid.dvar,u'dvar2':analysis.lowlevel.spectral_centroid.dvar2,u'max':analysis.lowlevel.spectral_centroid.max,u'mean':analysis.lowlevel.spectral_centroid.mean,u'min':analysis.lowlevel.spectral_centroid.min,u'var':analysis.lowlevel.spectral_centroid.var}
+
+D = {u'dmean':analysis.lowlevel.spectral_centroid.dmean, u'dmean2': analysis.lowlevel.spectral_centroid.dmean2,u'max':analysis.lowlevel.spectral_centroid.max,u'mean':analysis.lowlevel.spectral_centroid.mean,u'min':analysis.lowlevel.spectral_centroid.min}
+
+
+
+
+plt.bar(range(len(D)), D.values(), align='center')
+plt.xticks(range(len(D)), list(D.keys()))
+
+plt.show()
+
+
+#THIS IS A TEST TRYING TO AUTOMATIZE MORE THAN 1 DESCRIPTORS (2 on this example)PLOTTING THEM IN ONE GO
+#BEING THE ID SELECTED BY THE USER.
+
+x = input ("Which one is the Freesound ID you want to plot descritors from? (press enter when done)")
+print ("The Freesound ID chosen is: ",x)
+
+
+
+#Spectral_centroid
+sound = client.get_sound(x) 
+analysis = sound.get_analysis()
+print analysis.lowlevel.spectral_centroid.as_dict()
+
+#Plotting
+
+#D = {u'dmean':analysis.lowlevel.spectral_centroid.dmean, u'dmean2': analysis.lowlevel.spectral_centroid.dmean2, u'dvar':analysis.lowlevel.spectral_centroid.dvar,u'dvar2':analysis.lowlevel.spectral_centroid.dvar2,u'max':analysis.lowlevel.spectral_centroid.max,u'mean':analysis.lowlevel.spectral_centroid.mean,u'min':analysis.lowlevel.spectral_centroid.min,u'var':analysis.lowlevel.spectral_centroid.var}
+#discharged dvar,var and dvar2 as are too big or 0
+D = {u'dmean':analysis.lowlevel.spectral_centroid.dmean, u'dmean2': analysis.lowlevel.spectral_centroid.dmean2,u'max':analysis.lowlevel.spectral_centroid.max,u'mean':analysis.lowlevel.spectral_centroid.mean,u'min':analysis.lowlevel.spectral_centroid.min}
+
+plt.bar(range(len(D)), D.values(), align='center')
+plt.xticks(range(len(D)), list(D.keys()))
+plt.show()
+
+
+#SPECTRAL_COMPLEXITY
+sound = client.get_sound(x) 
+analysis = sound.get_analysis()
+print analysis.lowlevel.spectral_complexity.as_dict()
+
+E = {u'dmean':analysis.lowlevel.spectral_complexity.dmean, u'dmean2': analysis.lowlevel.spectral_complexity.dmean2, u'dvar':analysis.lowlevel.spectral_complexity.dvar,u'dvar2':analysis.lowlevel.spectral_complexity.dvar2,u'max':analysis.lowlevel.spectral_complexity.max,u'mean':analysis.lowlevel.spectral_complexity.mean,u'min':analysis.lowlevel.spectral_complexity.min,u'var':analysis.lowlevel.spectral_complexity.var}
+
+#Potting
+plt.bar(range(len(E)), E.values(), align='center')
+plt.xticks(range(len(E)), list(E.keys()))
+plt.show()
