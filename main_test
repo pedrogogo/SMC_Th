@@ -15,9 +15,9 @@ list_hard_analysis = dict_hard.keys()
 list_reverb_analysis = dict_reverb.keys()
 list_rough_analysis = dict_rough.keys()
 
+#iterates over the dicts in order to see the keys (freesoundIDs) and values (values computed) included therein.
 for keys, values in dict_bright.iteritems():
     print("BRIGHT-FreesoundID: %s VALUE: %s" % (keys, values))
-    
     
 for keys, values in dict_metal.iteritems():
     print("METAL-FreesoundID: %s VALUE: %s" % (keys, values))
