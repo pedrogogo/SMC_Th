@@ -62,3 +62,17 @@ for fs_id in all_ids_intersection:
 X = np.array(X)    
 #feature_vectore = [dict_bright[fs_id], dict_metal[fs_id],  dict_hard[fs_id], dict_reverb[fs_id], dict_rough[fs_id] ]
 X
+
+#####now have to create matrix Y
+
+
+#####-------------TRAINING Vs TEST----------------––––#####
+
+####--------------DEFINE MODEL(oneVsRest)--------------###
+
+###----------------FITTING------------------------------###
+
+###----------------TRAINING-----------------------------####
+
+###--------------EVALUTATION---------------------------###
+
