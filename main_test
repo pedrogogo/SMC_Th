@@ -68,7 +68,7 @@ X.shape
 
 
 y = []
-NB_SOUNDS = len(X)  #works the same way with all_ids_intersection insted of X)
+NB_SOUNDS = len(X)  #here will get same result "all_ids_intersection" instead of "X")
 NB_LABELS = len(feature vector)
 
 y = np.zeros((NB_SOUNDS, NB_LABELS), dtype=int)
