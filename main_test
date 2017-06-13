@@ -62,6 +62,35 @@ X = np.array(X)
 #feature_vectore = [dict_bright[fs_id], dict_metal[fs_id],  dict_hard[fs_id], dict_reverb[fs_id], dict_rough[fs_id] ]
 X
 
+print len(X)
+X.shape
+
+#>:(2641, 4)
+
+y = []
+NB_SOUNDS = len(all_ids_intersection)
+NB_LABELS = len(X)
+
+y = np.zeros((NB_SOUNDS, NB_LABELS), dtype=int)
+
+for idx, sound_id in enumerate(all_ids_intersection): # recorro todos los sonidos (lineas)
+    if sound_id in list_bright_analysis: # si el sonido es bright
+        y[idx][0] = 1 # pongo un 1 para la linea (sonido) "idx" y la columna (label) 0....
+    if sound_id in list_metal_analysis: 
+        y[idx][1] = 1 # pongo un 1 para la linea (sonido) "idx" y la columna (label) 1....
+    if sound_id in list_hard_analysis: 
+        y[idx][2] = 1 # pongo un 1 para la linea (sonido) "idx" y la columna (label) 2....
+    if sound_id in list_rough_analysis: 
+        y[idx][3] = 1 # pongo un 1 para la linea (sonido) "idx" y la columna (label) 3....´
+    
+ y.shape
+ 
+ #>result:(2641, 2641) #this does not seem right! WIP!
+
+
+
+
+
 #####now have to create matrix Y
 
 
