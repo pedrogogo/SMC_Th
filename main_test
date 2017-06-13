@@ -68,20 +68,20 @@ X.shape
 
 
 y = []
-NB_SOUNDS = len(X)
+NB_SOUNDS = len(X)  #works the same way with all_ids_intersection insted of X)
 NB_LABELS = len(feature vector)
 
 y = np.zeros((NB_SOUNDS, NB_LABELS), dtype=int)
 
 for idx, sound_id in enumerate(all_ids_intersection): # recorro todos los sonidos (lineas)
     if sound_id in list_bright_analysis: # si el sonido es bright
-        y[idx][0] = 1 # pongo un 1 para la linea (sonido) "idx" y la columna (label) 0....
+        y[idx][0] = 1 # add a 1 for each line (soundid) "idx" and the columns (label) 0....
     if sound_id in list_metal_analysis: 
-        y[idx][1] = 1 # pongo un 1 para la linea (sonido) "idx" y la columna (label) 1....
+        y[idx][1] = 1 # add a 1 for each line (soundid) "idx" and the columns (label) 1....
     if sound_id in list_hard_analysis: 
-        y[idx][2] = 1 # pongo un 1 para la linea (sonido) "idx" y la columna (label) 2....
+        y[idx][2] = 1 # add a 1 for each line (soundid) "idx" and the columns (label) 2....
     if sound_id in list_rough_analysis: 
-        y[idx][3] = 1 # pongo un 1 para la linea (sonido) "idx" y la columna (label) 3....´
+        y[idx][3] = 1 # add a 1 for each line (soundid) "idx" and the columns (label) 3....´
     
  y.shape
  
