@@ -89,11 +89,6 @@ for idx, sound_id in enumerate(all_ids_intersection): # recorro todos los sonido
 
 
 
-
-
-#####now have to create matrix Y
-
-
 #####-------------SPLIT (TRAINING Vs TEST)-----------––#####
 
 ####--------------DEFINE MODEL(oneVsRest)---------------####
