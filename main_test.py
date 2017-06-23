@@ -72,7 +72,7 @@ with open('punchy.csv', 'rb') as f:
     
 with open('metallic.csv', 'rb') as f:
     reader = csv.reader(f)
-    metallic_list_csv = map(tuple, reader)
+    metallic_list_csv = list(reader)
     metallic_list = [l[0] for l in metallic_list_csv]
     
 with open('sharp.csv', 'rb') as f:
@@ -87,18 +87,17 @@ with open('hard.csv', 'rb') as f:
 
 
 
-# In[123]:
 
+# In[123]:
+#printing to see content
 hard_list
 
-
 # In[124]:
-
 sharp_list
 
 
 # In[125]:
-
+#check length, change to desired list
 len(hard_list)
 
 
@@ -123,15 +122,6 @@ for keys, values in dict_reverb.iteritems():
 for keys, values in dict_rough.iteritems():
     print("ROUGH VALUES-FreesoundID: %s VALUE: %s" % (keys, values))
 
-
-# In[ ]:
-
-
-
-
-# In[227]:
-
-# set(filter(lambda x: x == x , dict_metal))   #DOES NOT REMOVE THE KEY
 
 
 # In[261]:
