@@ -1,4 +1,8 @@
 
+# coding: utf-8
+
+# In[22]:
+
 import json
 import numpy as np 
 from sklearn.multiclass import OneVsRestClassifier
@@ -11,7 +15,7 @@ from sklearn.svm import SVC
 import csv
 
 #un-comment line below to print whole numpy arrays (note that computing cost will be much higher)
-#np.set_printoptions(threshold=np.nan)
+np.set_printoptions(threshold=np.nan)
 
 #this opens_loads the json files and assign them to their corresponding variables
 
@@ -226,8 +230,7 @@ X
 
 # In[273]:
 
-#removing nan entries
-X=X[~np.isnan(X).any(axis=1)]
+
 
 
 # In[274]:
@@ -448,6 +451,7 @@ accuracy_score(y_true, y_pred)
 y_pred = clf.predict(X_test)
 categories = ['bright', 'metal', 'hard', 'rough']
 print(classification_report(y_test, y_pred, target_names=categories))
+
 
 
 
