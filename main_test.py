@@ -163,7 +163,6 @@ y.shape
 y
 
 #SPLIT
-
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.80, random_state=42)
 X_train.shape, y_train.shape
 X_test.shape, y_test.shape
@@ -189,14 +188,13 @@ clf.fit(X, y)
 # clf = GridSearchCV(svr,parameters)
 # clf.fit(X,y)
 
-#clf.predict_proba(X)
+#clf.predict_proba(X)  #not used yet
 
-#checking out score
+#checking out score and predict...need to be revised
 clf.score(X, y, sample_weight=None)
 clf.predict(X_test)
 
 #THIS IS WRONG!!!!!!!!! NEED TO ITERATE OVER THE LISTS!!!!!!!!!
-
 #The recall is the ratio tp / (tp + fn) 
 #where tp is the number of true positives and fn the number of false negatives.
 #The recall is intuitively the ability of the classifier to find all the positive samples.
@@ -211,8 +209,6 @@ x2 = recall_score(y_true, y_pred, average='macro')
 x3 = recall_score(y_true, y_pred, average='weighted')
 x1,x2,x3
 
-
-
 #The recall is the ratio tp / (tp + fn) 
 #where tp is the number of true positives and fn the number of false negatives.
 #The recall is intuitively the ability of the classifier to find all the positive samples.
@@ -223,7 +219,6 @@ m1 = recall_score(y_true, y_pred, average='micro')
 m2 = recall_score(y_true, y_pred, average='macro') 
 m3 = recall_score(y_true, y_pred, average='weighted') 
 m1, m2, m3
-
 
 #The precision is the ratio tp / (tp + fp) 
 #where tp is the number of true positives and fp the number of false positives. 
@@ -236,9 +231,7 @@ macro_prec=precision_score(y_true, y_pred, average='macro')
 weigh_prec= precision_score(y_true, y_pred, average='weighted')
 micro_prec=precision_score(y_true, y_pred, average='micro')
 #printing out values 
-
 micro_prec, macro_prec, weigh_prec 
-
 
 #from sklearn.metrics import accuracy_score
 y_true = X_train.shape
