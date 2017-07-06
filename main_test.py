@@ -165,17 +165,10 @@ y
 #SPLIT
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.80, random_state=42)
-
 X_train.shape, y_train.shape
-
 X_test.shape, y_test.shape
 
-
-
-y_train
-
-
-
+#this could have been done before.It is for double checking that non "nan" values are within the matrixes
 print(np.isinf(X))
 print(np.isnan(X))
 print(np.isinf(y))
@@ -184,7 +177,6 @@ print(np.isnan(y))
 #TRAIN
 clf = OneVsRestClassifier(SVC(kernel='linear'))
 clf.fit(X, y)
-
 
 # #will need to check later on for optimization purposes, now seems the issue is somewhere else.
 # 
@@ -197,17 +189,11 @@ clf.fit(X, y)
 # clf = GridSearchCV(svr,parameters)
 # clf.fit(X,y)
 
-
 #clf.predict_proba(X)
-
 
 #checking out score
 clf.score(X, y, sample_weight=None)
-
-
 clf.predict(X_test)
-
-
 
 #THIS IS WRONG!!!!!!!!! NEED TO ITERATE OVER THE LISTS!!!!!!!!!
 
@@ -258,7 +244,6 @@ micro_prec, macro_prec, weigh_prec
 y_true = X_train.shape
 y_pred = X_test.shape
 accuracy_score(y_true, y_pred)
-
 
 #TEST....classification report
 #NEED TO CHECK PRECISION AND RECALL...RESULTS SEEM INCORRECT! (all 100%) NEED TO FIND OUT WHAT IS GOING ON!
